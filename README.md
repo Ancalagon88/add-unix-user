@@ -1,4 +1,4 @@
-# add-unix-user
+# Add Unix User Script for Admins
 A simple bash script for creating a new unix user in the CLI
 
 I made this for an assignment in a Linux/Unix Adminstration course I took. There are probably better ways to do this, but this is what I came up with.
