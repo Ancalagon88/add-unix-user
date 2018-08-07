@@ -11,23 +11,23 @@ echo "$NEWUSER:$TEMPPASS" | sudo chpasswd
 sudo chage -d 0 $NEWUSER
 sudo chmod 740 /home/$NEWUSER
 isADMINFUN () {
-echo "Is "$NEWUSER" an Administrator y/n?"
-read isADMIN
-isADMIN=`echo "$isADMIN" | awk '{print tolower($0)}'`
-adminFunction
+    echo "Is "$NEWUSER" an Administrator y/n?"
+    read isADMIN
+    isADMIN=`echo "$isADMIN" | awk '{print tolower($0)}'`
+    adminFunction
 }
 adminFunction () {
-if [ "$isADMIN" == "y" ]; then
+    if [ "$isADMIN" == "y" ]; then
         sudo usermod -aG sudo $NEWUSER
         exit 0
-elif [ "$isADMIN" == "n" ]; then
+        elif [ "$isADMIN" == "n" ]; then
         echo "What group should "$NEWUSER" be apart of?"
         read GROUP
         sudo usermod -aG $GROUP $NEWUSER
         exit 0
-else
+    else
         echo "Please enter either y or n"
         isADMINFUN
-fi
+    fi
 }
 isADMINFUN
