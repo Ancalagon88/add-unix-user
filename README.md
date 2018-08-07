@@ -8,6 +8,6 @@ If this is used in conjunction with PAM rules, you can force users to create str
 An example of some PAM rules that could be helpful:
 
 Password Policy In /etc/pam.d/common-password
-password        requisite                       pam_cracklib.so retry=3 minlen=10 difok=3 ucredit=-1|credit=-1 dcredit=-1 ocredit=-1
-password        [success=2 default=ignore]      pam_unix.so obscure use_authtok try_first_pass sha512
-password        [success=1 user_unknown=ignore default=die]     pam_ldap.so use_authtok try_first_pass
+password	requisite	pam_cracklib.so retry=3 minlen=10 difok=3 ucredit=-1|credit=-1 dcredit=-1 ocredit=-1
+password	[success=2 default=ignore]	pam_unix.so obscure use_authtok try_first_pass sha512
+password	[success=1 user_unknown=ignore default=die]	pam_ldap.so use_authtok try_first_pass
